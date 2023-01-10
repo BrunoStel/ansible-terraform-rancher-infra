@@ -1,0 +1,7 @@
+- hosts: rancher-server
+  become: true
+  roles:
+    - install-rancher
+    - install-kubectl
+
+

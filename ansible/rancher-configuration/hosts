@@ -1,0 +1,6 @@
+[rancher-server]
+54.162.165.97
+
+[all:vars]
+ansible_ssh_private_key_file=/mnt/c/Users/BrunoS/Desktop/Projetos/Devops-Rancher/ssh-key/ec2-ssh.pem
+ansible_user=ubuntu

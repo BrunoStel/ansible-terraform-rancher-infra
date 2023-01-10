@@ -1,0 +1,6 @@
+---
+# tasks file for install-rancher
+- name: Install rancher
+  ansible.builtin.shell:
+    cmd: docker run -d --restart=unless-stopped -p 80:80 -p 443:443 --privileged rancher/rancher:latest
+  ignore_errors: true

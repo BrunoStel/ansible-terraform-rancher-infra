@@ -1,0 +1,4 @@
+---
+- name: Clean kubernetes caching
+  ansible.builtin.shell:
+    cmd: sudo rm -r /etc/kubernetes 2> /dev/null && docker stop $(docker ps -aq) && docker rm $(docker ps -aq)

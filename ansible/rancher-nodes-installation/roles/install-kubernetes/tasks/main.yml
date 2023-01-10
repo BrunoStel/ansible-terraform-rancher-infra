@@ -1,0 +1,4 @@
+---
+- name: Install rancher-node-kubernetes
+  ansible.builtin.shell:
+    cmd: sudo docker run -d --privileged --restart=unless-stopped --net=host -v /etc/kubernetes:/etc/kubernetes -v /var/run:/var/run  rancher/rancher-agent:v2.7.0 --server https://rancher.brunostel.click --token 6sq95dkqz6h8lnlwxx9557xkr5l6d9bkv6kgmvsskvg2zhzjsdzfb4 --ca-checksum 43d0c2881bc09a8c4cfdbf344242b2a8eaaac7d3ad33c92d79c66522ab5cd8a4 --etcd --controlplane --worker

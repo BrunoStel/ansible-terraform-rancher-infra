@@ -1,0 +1,27 @@
+---
+- name: Build redis image
+  community.docker.docker_image:
+    name: brunostel/redis:devops
+    build:
+      path: /home/ubuntu/devops/exercicios/app/redis/
+    source: build
+
+- name: Build node image
+  community.docker.docker_image:
+    name: brunostel/node:devops
+    build:
+      path: /home/ubuntu/devops/exercicios/app/node/
+    source: build
+
+- name: Build nginx image
+  community.docker.docker_image:
+    name: brunostel/nginx:devops
+    build:
+      path: /home/ubuntu/devops/exercicios/app/nginx/
+    source: build
+
+- name: Run `docker-compose up`
+  community.docker.docker_compose:
+    project_src:  /home/ubuntu/devops/exercicios/app/
+    build: false
+    state: absent

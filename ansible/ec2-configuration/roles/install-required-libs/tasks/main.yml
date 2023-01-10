@@ -1,0 +1,20 @@
+---
+- name: Install required libs
+  apt:
+    name:
+      - apt-transport-https
+      - ca-certificates
+      - curl
+      - gnupg
+      - lsb-release
+      - python3-pip
+      - virtualenv
+      - python3-setuptools
+      - git
+    state: present
+    update_cache: yes
+
+- name: install jsondiff
+  pip:
+    name: jsondiff  
+    state: present

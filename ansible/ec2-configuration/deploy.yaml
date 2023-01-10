@@ -1,0 +1,6 @@
+- hosts: all
+  become: true
+  roles:
+    - clone-devops-repo
+    - install-required-libs
+    - install-docker-rancher
